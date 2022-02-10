@@ -7,7 +7,4 @@ public class KieuDuLieu {
 
         System.out.println(a);
     }
-
-
-
 }
