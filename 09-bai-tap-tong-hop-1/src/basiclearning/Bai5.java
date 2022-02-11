@@ -21,6 +21,5 @@ public class Bai5 {
 
         System.out.println("Chu vi: " + c);
         System.out.println("Diện tích: " + s);
-
     }
 }
