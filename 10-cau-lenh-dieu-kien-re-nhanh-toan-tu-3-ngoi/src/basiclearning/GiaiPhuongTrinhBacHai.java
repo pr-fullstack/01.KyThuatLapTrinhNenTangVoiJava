@@ -35,13 +35,9 @@ public class GiaiPhuongTrinhBacHai {
 
             if (delta < 0) {
                 System.out.println("Phương trình vô nghiệm");
-            }
-
-            if (delta == 0) {
+            } else if (delta == 0) {
                 System.out.println("Phương trình có nghiệm duy nhất : x = " + -b / (2 * a));
-            }
-
-            if (delta > 0) {
+            } else {
                 System.out.println("x1 = " + (-b + Math.sqrt(delta)) / (2 * a));
                 System.out.println("x2 = " + (-b - Math.sqrt(delta)) / (2 * a));
             }
