@@ -12,19 +12,20 @@ import java.util.Scanner;
  */
 public class Bai9 {
     public static void main(String[] args) {
-        // Bước 1: nhập 1 ký tự
+        // Bước 1: Nhập vào 1 ký tự.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Nhập vào ký tự: ");
         String str = scanner.next(); //Quang
         char c = str.charAt(0);
-        // Bước 2: Kiểm tra là chữ
-        if (c >= 'A' && c <= 'Z') { //HOA
+
+        // Bước 2 ~ Bước 3
+        if (c >= 'A' && c <= 'Z') {
             System.out.printf("Kết quả: %c", c + 32);
         } else if (c >= 'a' && c <= 'z') {
             System.out.printf("Kết quả: %c", c - 32);
         } else {
-            System.out.println("Không phải là chữ");
+            System.out.println("Không phải chữ");
         }
     }
 }
