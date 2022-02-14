@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Nếu hợp lệ hãy tìm ra ngày kế tiếp (ngày - tháng - năm)
  * & ngày trước đó (ngày - tháng - năm).
  */
-public class Bai11KiemTraNgayHopLe {
+public class Bai11TimNgayKeTiep {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -45,7 +45,19 @@ public class Bai11KiemTraNgayHopLe {
         if (year < 0 || month < 0 || month > 12 || day < 0 || day > maxDayOfMonth) {
             System.out.printf("%d-%d-%d không phải là ngày hợp lệ", year, month, day);
         } else {
-            System.out.printf("%d-%d-%d là ngày hợp lệ", year, month, day);
+            if (day == maxDayOfMonth) {
+                day = 1;
+                if (month == 12) {
+                    month = 1;
+                    year++;
+                } else {
+                    month++;
+                }
+            } else {
+                day++;
+            }
+
+            System.out.printf("%d-%d-%d là ngày kế tiếp", year, month, day);
         }
     }
 }
