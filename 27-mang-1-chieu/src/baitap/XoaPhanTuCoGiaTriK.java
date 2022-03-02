@@ -2,7 +2,10 @@ package baitap;
 
 import java.util.Scanner;
 
-public class XoaPhanTuTaiViTriIndex {
+/**
+ * Xóa phần tử có giá trị k
+ */
+public class XoaPhanTuCoGiaTriK {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -21,14 +24,14 @@ public class XoaPhanTuTaiViTriIndex {
         System.out.printf("Nhập vào các phần tử của mảng: ");
         nhapMang(a);
 
-        System.out.print("Giá trị của mảng trước khi xóa tại vị trí index: ");
+        System.out.print("Giá trị của mảng trước khi xóa phần tử k: ");
         xuatMang(a);
 
-        int index = 4;
+        int k = 2;
 
-        a = removeIndex(a, index);
+        a = removeElement(a, k);
 
-        System.out.print("Giá trị của mảng sau khi xóa tại vị trí index: ");
+        System.out.print("Giá trị của mảng sau khi xóa phần tử k: ");
         xuatMang(a);
     }
 
@@ -49,6 +52,16 @@ public class XoaPhanTuTaiViTriIndex {
 
         // Bước 3: Trả về vùng nhớ mới
         return b;
+    }
+
+    static int[] removeElement(int[] a, int k) {
+        for(int i = 0; i < a.length; i++) {
+            if (a[i] == k) {
+                a = removeIndex(a, i); // 1 2 2 3 4
+                i--;
+            }
+        }
+        return a;
     }
 
     static void nhapMang(int[] arr) {
