@@ -7,7 +7,7 @@ import java.util.Scanner;
  *  f.	Tìm giá trị lớn nhì của mảng a.
  *      (Theo 2 cách: cách 1 dùng 2 vòng for. Cách 2 dùng 1 vòng for). (*)
  */
-public class Bai4ETimGiaTriLonNhi {
+public class Bai4FTimGiaTriLonNhi {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
