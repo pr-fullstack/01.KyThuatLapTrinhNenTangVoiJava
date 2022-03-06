@@ -4,16 +4,9 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
- * 7.	Viết chương trình nhập thông tin của n nhân viên trong công ty (n <= 5).
- * Thông tin cần nhập tương tự ở câu trên.
- * Người dùng không nhập trước số n từ bàn phím mà sau khi nhập người đầu tiên,
- * chương trình sẽ hỏi người dùng có muốn nhập tiếp không.
- * Nếu người dùng gõ 'N' hoặc số lượng nhân viên đã đủ 5 người rồi,
- * thì chương trình sẽ dừng nhập. Sau khi nhập xong thì in thông tin đã nhập ra.
- * Lưu ý: in ra n nhân viên cùng lúc,
- * không phải nhập nhân viên nào in nhân viên đó ra luôn. (*)
+ * a.	Tìm nhân viên có điểm trung bình cao nhất, cao nhì.
  */
-public class Bai7NhapThongTinNNhanVien {
+public class Bai8ATimNhanVienCoDiemCaoNhat {
 
     static String[] hoTen = new String[5];
     static int[] tuoi = new int[5];
@@ -44,6 +37,52 @@ public class Bai7NhapThongTinNNhanVien {
             System.out.printf("========= Thông tin nhân viên thứ %d =========\n", i + 1);
             xuatThongTinNhanVien(i);
         }
+
+        System.out.println("========= Xuất thông tin nhân viên có điểm cao nhất =========");
+        int[] indexes = findIndexScoreMax(diemTB);
+        for (int i = 0; i < indexes.length; i++) {
+            System.out.printf("========= Thông tin nhân viên thứ %d =========\n", i + 1);
+            xuatThongTinNhanVien(indexes[i]);
+        }
+    }
+
+    static int[] findIndexScoreMax(double[] arr) {
+        // Tìm max
+        double max = findMax(arr);
+
+        // Đếm xem có bao nhiêu phần tử max
+        int countMax = 0;
+        int len = arr.length;
+        for(int i = 0; i < len; i++) {
+            if (max == arr[i]) {
+                countMax++;
+            }
+        }
+
+        // Khởi tạo mảng với số lượng phần tử tương ứng
+        int[] temp = new int[countMax];
+
+        // Gán giá trị vị trí index tương ứng
+        int tempIndex = 0;
+        for(int i = 0; i < len; i++) {
+            if (max == arr[i]) {
+                temp[tempIndex++] = i;
+            }
+        }
+
+        return temp;
+    }
+
+    static double findMax(double[] arr) {
+        double max = arr[0];
+
+        int len = arr.length;
+        for(int i = 1; i < len; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
     static void nhapThongTinNhanVien(int index) {
