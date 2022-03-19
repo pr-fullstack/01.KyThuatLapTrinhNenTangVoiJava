@@ -8,7 +8,6 @@ public class XuLyFile {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(Paths.get("34-xu-ly-file/src/resources/input.txt"));
 
-
         String str = scanner.nextLine();
         String str2 = scanner.nextLine();
 
